@@ -8,12 +8,13 @@ body {
   padding: 0;
   font-family: 'Questrial', sans-serif;
   background: rgb(255, 102, 7);
+  box-sizing: border-box;
 }
 
 .testli {
   font-size: 20px;
   padding: 5px;
-  color: white;
+  color: rgb(255, 253, 234);
   background-color: rgb(255, 102, 7);
   font-family: 'Boogaloo', cursive;
 }
@@ -25,4 +26,29 @@ body {
 
 .testli:hover {
   color: rgb(119, 0, 0);
+}
+
+.fa-plus-square-o {
+  color: rgb(255, 253, 234);
+}
+
+.fa-plus-square-o:hover {
+  color: rgb(119, 0, 0);
+}
+
+.fa-trash {
+  margin: 0 15px;
+  color: rgb(119, 0, 0);
+}
+
+.fa-trash:hover {
+  color: rgb(255, 253, 234);
+}
+
+.fa-pencil-square-o {
+  color: rgb(119, 0, 0);
+}
+
+.fa-pencil-square-o:hover {
+  color: rgb(255, 253, 234);
 }
