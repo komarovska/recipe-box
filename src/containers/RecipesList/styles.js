@@ -65,3 +65,16 @@ export const RecipeIngridients = styled.ul`
     font-size: 18px;
     padding-left: 30px;
 `
+export const AddTitle = styled.div `
+    font-family: 'Boogaloo', cursive;
+    font-size: 28px;
+    text-align: center;
+    color: ${lightBeige};
+`
+
+export const SmallTitle = styled.div`
+    font-family: 'Boogaloo', cursive;
+    font-size: 20px;
+    text-align: center;
+    color: ${lightBeige};  
+`

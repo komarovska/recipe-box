@@ -52,3 +52,44 @@ body {
 .fa-pencil-square-o:hover {
   color: rgb(255, 253, 234);
 }
+
+.modal {
+  width: 30%;
+  height: 60%;
+  position: fixed;
+  overflow: scroll;
+  top: 25%;
+  left: 35%;
+  /*background-color: rgba(51, 3, 3, .8);*/
+  background-color: rgb(127, 99, 142);
+  font-size: 2rem;
+  color: black;
+  font-family: 'PT Sans', sans-serif;
+  padding-top: 15px;
+  padding-right: 20px;
+}
+
+/*.modal-content {
+  width: 40%;
+  height: 50%;
+  position: fixed;
+  overflow: auto;
+  top: 15%;
+  left: 15%;
+  background-color: #f5f5f5;
+  font-size: 2rem;
+  color: black;
+  font-family: 'PT Sans', sans-serif;
+  padding-top: 15px;
+  padding-right: 20px;
+}*/
+
+.modal-close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
