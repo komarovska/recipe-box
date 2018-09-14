@@ -58,8 +58,19 @@ class Recipe extends Component {
                 <span className='modal-close' onClick={this.hideModal}>&times;</span>
                 <AddTitle>Add a recipe</AddTitle>
                 <SmallTitle>Recipe</SmallTitle>
+                <form action="">
+                <input className='input-title' type="text" name="firstname" placeholder="Add a recipe title"/>
+                </form>
                 <SmallTitle>Ingridients</SmallTitle>
+                <form action="">
+                <input className='input-ingridients' type="text" name="firstname" placeholder="Add recipe's ingridients separated by /"/>
+                </form>
                 <SmallTitle>Directions</SmallTitle>
+                <form action="">
+                <input className='input-directions' type="text" name="firstname" placeholder="Add recipe's instructions separated by /"/>
+                <input type="button" value="Add"></input>
+                <input type="button" value="Close"></input>
+                </form>
             </div>
             </div>
         )
