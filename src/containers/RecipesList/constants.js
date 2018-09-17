@@ -1,3 +1,6 @@
+// for actions
+export const FETCH_ALL = 'FETCH_ALL';
+
 // colors
 export const brightOrange = 'rgb(255, 102, 7)';
 export const bordoBrown = 'rgb(119, 0, 0)';
@@ -57,3 +60,5 @@ export const defaultRecipes = {
         ]
     }
 }
+
+export const test = `testtts`

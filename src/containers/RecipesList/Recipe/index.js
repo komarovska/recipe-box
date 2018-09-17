@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
 
+import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
+import { selectRecipes } from '../selectors';
+import { formDefault } from '../actions';
+
 import { 
     RecipeItem, 
     RecipeTitle, 
@@ -12,6 +17,10 @@ import {
 }  from '../styles.js';
 
 class Recipe extends Component {
+
+    componentDidMount() {
+        console.log(this.props);
+      }
  
     showModal = () => {
         let Modals = document.getElementsByClassName('modal');
@@ -77,4 +86,12 @@ class Recipe extends Component {
     }
 }
 
-export default Recipe;
+const mapStateToProps = createStructuredSelector({
+    recipesList: selectRecipes()
+  });
+
+const mapDispatchToProps = {
+    onFormDefault: formDefault,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Recipe);

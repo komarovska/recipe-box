@@ -2,7 +2,14 @@ import React, { Component } from 'react';
 
 import { Title, List }  from '../styles.js';
 
+import { formDefault } from '../actions.js';
+
 class Box extends Component {
+
+    componentDidMount () {
+        formDefault();
+    }
+
     render() {
         return (
             <div className='row'>
