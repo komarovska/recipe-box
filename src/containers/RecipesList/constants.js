@@ -1,5 +1,5 @@
 // for actions
-export const FETCH_ALL = 'FETCH_ALL';
+export const ALL = 'ALL';
 
 // colors
 export const brightOrange = 'rgb(255, 102, 7)';

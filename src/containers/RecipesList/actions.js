@@ -1,14 +1,12 @@
 import {
   defaultRecipes,
-  FETCH_ALL,
+  ALL,
 } from 'constants';
 
-const formDefault = () => {
-  const data = defaultRecipes;
-  return ({
-    type: FETCH_ALL,
-    payload: data,
-  });
-};
+const formDefault = () => ({
+  type: ALL,
+  payload: defaultRecipes,
+});
+
 
 export default formDefault;

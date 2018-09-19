@@ -2,13 +2,12 @@ import { FETCH_ALL } from 'constants';
 
 const initialState = {
   Recipes: {},
-  sortingType: 'all',
+  sortingType: 'ALL',
 };
 const RecipeReducer = (state = initialState, action) => {
   switch (action.type) {
     case `${FETCH_ALL}_FULFILED`:
-      const recipesList = action.payload;
-      return { ...state, Recipes: recipesList, sortingType: 'all' };
+      return { ...state, Recipes: action.payload, sortingType: 'ALL' };
     default:
       return state;
   }
