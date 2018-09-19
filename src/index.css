@@ -87,7 +87,6 @@ input[type=text]:focus {
   overflow: scroll;
   top: 25%;
   left: 35%;
-  /*background-color: rgba(51, 3, 3, .8);*/
   background-color: rgb(127, 99, 142);
   font-size: 2rem;
   color: black;
@@ -103,6 +102,8 @@ input[type=text]:focus {
   font-size: 40px;
   font-weight: bold;
   cursor: pointer;
+  background: rgb(127, 99, 142);
+  border: none;
 }
 
 .input-title {
@@ -115,4 +116,9 @@ input[type=text]:focus {
 
 .input-directions {
   height: 120px;
+}
+
+.fa-plus-square-o {
+  background: rgb(46, 70, 89);
+  border: none;
 }
