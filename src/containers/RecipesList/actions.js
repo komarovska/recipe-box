@@ -3,10 +3,11 @@ import {
   ALL,
 } from 'constants';
 
-const formDefault = () => ({
-  type: ALL,
-  payload: defaultRecipes,
-});
-
+const formDefault = () => async dispatch => {
+  dispatch({
+    type: ALL,
+    payload: defaultRecipes,
+  });
+};
 
 export default formDefault;

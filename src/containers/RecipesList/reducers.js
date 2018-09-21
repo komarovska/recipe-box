@@ -6,7 +6,7 @@ const initialState = {
 };
 const RecipeReducer = (state = initialState, action) => {
   switch (action.type) {
-    case `${FETCH_ALL}_FULFILED`:
+    case `${FETCH_ALL}`:
       return { ...state, Recipes: action.payload, sortingType: 'ALL' };
     default:
       return state;
