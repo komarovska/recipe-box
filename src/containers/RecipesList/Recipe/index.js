@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
@@ -17,7 +18,8 @@ import {
 
 class Recipe extends Component {
   componentDidMount() {
-    console.log(this.props.onFormDefault);
+    const { onFormDefault } = this.props;
+    console.log(onFormDefault);
   }
 
   showModal = () => {
@@ -68,6 +70,10 @@ const mapStateToProps = createStructuredSelector({
 
 const mapDispatchToProps = {
   onFormDefault: formDefault,
+};
+
+Recipe.propTypes = {
+  onFormDefault: PropTypes.func,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Recipe);
