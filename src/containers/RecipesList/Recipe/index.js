@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { selectRecipes } from '../selectors';
-import formDefault from '../actions';
+import { addRecipe } from '../actions';
 import RecipeNew from '../RecipeNew/index';
 
 import {
@@ -17,10 +16,9 @@ import {
 } from '../styles';
 
 class Recipe extends Component {
-  componentDidMount() {
-    const { onFormDefault } = this.props;
-    console.log(onFormDefault);
-  }
+  /* componentDidMount() {
+    this.props.addRecipe();
+  } */
 
   showModal = () => {
     const Modals = document.getElementsByClassName('modal');
@@ -64,16 +62,8 @@ class Recipe extends Component {
   }
 }
 
-const mapStateToProps = createStructuredSelector({
-  recipesList: selectRecipes,
-});
+// function mapStateToProps({ recipes }, ownProps) {
+ // return
+// }
 
-const mapDispatchToProps = {
-  onFormDefault: formDefault,
-};
-
-Recipe.propTypes = {
-  onFormDefault: PropTypes.func,
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Recipe);
+export default connect(null, { addRecipe })(Recipe);

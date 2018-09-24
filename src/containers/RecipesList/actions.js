@@ -1,13 +1,20 @@
 import {
-  defaultRecipes,
-  ALL,
-} from 'constants';
+  ADD_RECIPE,
+  SHOW_RECIPE
+} from './constants';
 
-const formDefault = () => async dispatch => {
-  dispatch({
-    type: ALL,
-    payload: defaultRecipes,
-  });
+export const addRecipe = ({ title, ingridients, directions }) => ({
+  type: ADD_RECIPE,
+  title,
+  ingridients,
+  directions,
+});
+
+export const deleteRecipe = ({ title, ingridients, directions }) => {
+  
 };
 
-export default formDefault;
+export const showRecipe = Id => ({
+  type: SHOW_RECIPE,
+  id: Id,
+});

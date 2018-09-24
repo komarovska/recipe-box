@@ -1,47 +1,94 @@
 import React, { Component } from 'react';
-import { Field, reduxform } from 'redux-form';
-
+import { Field, reduxForm } from 'redux-form';
+import { connect } from 'react-redux';
+import { addRecipe } from '../actions';
 import {
   AddTitle,
   SmallTitle,
 } from '../styles';
 
-export default class RecipeNew extends Component {
+class RecipeNew extends Component {
   hideModal = () => {
     const Modals = document.getElementsByClassName('modal');
     Modals[0].style.display = 'none';
   }
 
-  render() {
+  renderTitleField(field) {
     return (
-      <div className="modal">
-        <button type="button" className="modal-close" onClick={this.hideModal}>&times;</button>
-        <AddTitle>Add a recipe</AddTitle>
-        <SmallTitle>Recipe</SmallTitle>
-        <form action="">
-          <input className="input-title" type="text" name="firstname" placeholder="Add a recipe title" />
-        </form>
-        <SmallTitle>Ingridients</SmallTitle>
-        <form action="">
-          <input
-            className="input-ingridients"
-            type="text"
-            name="firstname"
-            placeholder="Add recipe's ingridients separated by /"
-          />
-        </form>
-        <SmallTitle>Directions</SmallTitle>
-        <form action="">
-          <input
-            className="input-directions"
-            type="text"
-            name="firstname"
-            placeholder="Add recipe's instructions separated by /"
-          />
-          <input type="button" value="Add" />
-          <input type="button" value="Close" />
-        </form>
+      <div>
+        <input
+          className="input-title"
+          type="text"
+          placeholder="Add a recipe title"
+          {...field.input}
+        />
       </div>
     );
   }
+
+  renderIngridientsField(field) {
+    return (
+      <div>
+        <input
+          className="input-ingridients"
+          type="text"
+          placeholder="Add recipe's ingridients separated by /"
+          {...field.input}
+        />
+      </div>
+    );
+  }
+
+  renderDirectionsField(field) {
+    return (
+      <div>
+        <input
+          className="input-directions"
+          type="text"
+          placeholder="Add recipe's instructions separated by /"
+          {...field.input}
+        />
+      </div>
+    );
+  }
+
+  onSubmit(values) {
+    console.log(values);
+    this.props.addRecipe(values);
+    console.log();
+  }
+
+  render() {
+    const { handleSubmit } = this.props;
+
+    return (
+      <form className="modal" onSubmit={handleSubmit(this.onSubmit.bind(this))}>
+        <button type="button" className="modal-close" onClick={this.hideModal}>&times;</button>
+        <AddTitle>Add a recipe</AddTitle>
+        <SmallTitle>Recipe</SmallTitle>
+        <Field
+          name="title"
+          component={this.renderTitleField}
+        />
+        <SmallTitle>Ingridients</SmallTitle>
+        <Field
+          name="ingridients"
+          component={this.renderIngridientsField}
+        />
+        <SmallTitle>Directions</SmallTitle>
+        <Field
+          name="directions"
+          component={this.renderDirectionsField}
+        />
+        <input type="submit" value="Add" />
+        <input type="submit" value="Close" />
+      </form>
+    );
+  }
 }
+
+export default reduxForm({
+  form: 'RecipeNewForm',
+})(
+  connect(null, { addRecipe })(RecipeNew),
+);

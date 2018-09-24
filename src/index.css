@@ -19,7 +19,7 @@ input[type=text] {
   width: 400px;
 }
 
-input[type=button] {
+input[type=submit] {
   background-color: lightgray;
   color: black;
   font-style: italic;
@@ -30,7 +30,7 @@ input[type=button] {
   border-radius: 10%;
 }
 
-input[type=button]:hover {
+input[type=submit]:hover {
   color: rgb(255, 102, 7);
 }
 
@@ -120,5 +120,5 @@ input[type=text]:focus {
 
 .fa-plus-square-o {
   background: rgb(46, 70, 89);
-  border: none;
+  border: 1px solid rgb(46, 70, 89);
 }
