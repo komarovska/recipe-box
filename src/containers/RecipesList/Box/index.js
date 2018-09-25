@@ -3,7 +3,7 @@ import propTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { Title, List } from '../styles';
-import { selectRecipes } from '../selectors';
+import selectRecipes from '../selectors';
 import { showRecipe, showDefault } from '../actions';
 
 class Box extends Component {

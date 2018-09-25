@@ -26,7 +26,7 @@ const RecipeReducer = (state = initialState, action) => {
     case SHOW_RECIPE:
       return {
         ...state,
-        shownRecipe: action.id,
+        detailedRecipe: action.id,
       };
     // case GET_DEFAULT:
       // return state;
