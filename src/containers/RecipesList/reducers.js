@@ -1,6 +1,6 @@
 import { v4 } from 'node-uuid';
 
-import { defaultRecipes, ADD_RECIPE, SHOW_RECIPE, EDIT_RECIPE, GET_DEFAULT } from './constants';
+import { defaultRecipes, ADD_RECIPE, SHOW_RECIPE } from './constants';
 
 const getNextRecipeId = () => v4();
 
@@ -28,8 +28,6 @@ const RecipeReducer = (state = initialState, action) => {
         ...state,
         detailedRecipe: action.id,
       };
-    // case GET_DEFAULT:
-      // return state;
     default:
       return state;
   }

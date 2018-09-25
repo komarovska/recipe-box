@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { createStructuredSelector } from 'reselect';
-import { selectRecipes } from '../selectors';
+// import { createStructuredSelector } from 'reselect';
+// import { selectRecipes } from '../selectors';
 import { addRecipe } from '../actions';
 import RecipeNew from '../RecipeNew/index';
 
@@ -16,10 +16,6 @@ import {
 } from '../styles';
 
 class Recipe extends Component {
-  /* componentDidMount() {
-    this.props.addRecipe();
-  } */
-
   showModal = () => {
     const Modals = document.getElementsByClassName('modal');
     Modals[0].style.display = 'block';
@@ -63,7 +59,7 @@ class Recipe extends Component {
 }
 
 // function mapStateToProps({ recipes }, ownProps) {
- // return
+// return
 // }
 
 export default connect(null, { addRecipe })(Recipe);
