@@ -4,27 +4,30 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { Title, List } from '../styles';
 import { selectRecipes } from '../selectors';
-import { showRecipe } from '../actions';
+import { showRecipe, showDefault } from '../actions';
 
-const Box = ({ recipes, onShowRecipe }) => (
-  <div className="row">
-    <Title>
-      Recipe Box
-    </Title>
-    <List className="col-sm-offset-2 col-sm-8">
-      {recipes.map(recipe => (
-        <li className="testli">{recipe.name}</li>
-      ))}
+class Box extends Component {
+  componentDidMount() {
+    const { onShowDefault } = this.props;
+    onShowDefault();
+  }
 
-    </List>
-
-  </div>
-);
-
-Box.propTypes = {
-  recipes: propTypes.object,
-  onShowRecipe: propTypes.func,
-};
+  render() {
+    const { recipes } = this.props;
+    return (
+      <div className="row">
+        <Title>
+        Recipe Box
+        </Title>
+        <List className="col-sm-offset-2 col-sm-8">
+          {recipes.map(recipe => (
+            <li className="testli">{recipe.name}</li>
+          ))}
+        </List>
+      </div>
+    );
+  }
+}
 
 const mapStateToProps = createStructuredSelector({
   recipes: selectRecipes,
@@ -32,33 +35,12 @@ const mapStateToProps = createStructuredSelector({
 
 const mapDispatchToProps = {
   onShowRecipe: showRecipe,
+  onShowDefault: showDefault,
 };
-/*  class Box extends Component {
-  componentDidMount() {
-    formDefault();
-  } 
 
-  render() {
-    return (
-      <div className="row">
-        <Title>
-                    Recipe Box
-        </Title>
-        <List className="col-sm-offset-2 col-sm-8">
-
-          <li className="testli">test</li>
-          <li className="testli">test</li>
-          <li className="testli">test</li>
-          <li className="testli">test</li>
-          <li className="testli">test</li>
-          <li className="testli">test</li>
-          <li className="testli">test</li>
-
-        </List>
-
-      </div>
-    );
-  }
-} */
+Box.propTypes = {
+  onShowDefault: propTypes.func,
+  recipes: propTypes.array,
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Box);

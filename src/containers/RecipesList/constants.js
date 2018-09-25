@@ -4,6 +4,7 @@ export const SHOW_DEFAULT = 'SHOW_DEFAULT';
 export const ADD_RECIPE = 'ADD_RECIPE';
 export const EDIT_RECIPE = 'EDIT_RECIPE';
 export const SHOW_RECIPE = 'SHOW_RECIPE';
+export const GET_DEFAULT = 'GET_DEFAULT';
 export const DELETE_RECIPE = 'DELETE_RECIPE';
 // colors
 export const brightOrange = 'rgb(255, 102, 7)';
@@ -11,8 +12,8 @@ export const bordoBrown = 'rgb(119, 0, 0)';
 export const darkBlue = 'rgb(46, 70, 89)';
 export const lightBeige = 'rgb(255, 253, 234)';
 // default
-export const defaultRecipes = {
-  1: {
+export const defaultRecipes = [
+  {
     id: 1,
     title: 'Easy Chocolate Pie',
     ingridients: [
@@ -29,7 +30,7 @@ export const defaultRecipes = {
       'Refrigerate 6 hours, or until set. Cut into 8 slices to serve. Garnish if desired.',
     ],
   },
-  2: {
+  {
     id: 2,
     title: 'Lime Chicken Tacos',
     ingridients: [
@@ -44,7 +45,7 @@ export const defaultRecipes = {
       'Heat an iron skillet over medium heat. Place a tortilla in the pan, warm. Serve lime chicken mixture.',
     ],
   },
-  3: {
+  {
     id: 3,
     title: 'Artichoke Dip',
     ingridients: [
@@ -62,4 +63,4 @@ export const defaultRecipes = {
       'Set Oven to Bake at 350 degrees.',
     ],
   },
-};
+];
