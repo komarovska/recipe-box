@@ -44,6 +44,10 @@ input[type=text]:focus {
   color: rgb(255, 253, 234);
   background-color: rgb(255, 102, 7);
   font-family: 'Boogaloo', cursive;
+  display: block;
+  border: none;
+  width: 100%;
+  text-align: left;
 }
 
 .testli:nth-child(2n) {

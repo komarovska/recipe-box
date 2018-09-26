@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-// import PropTypes from 'prop-types';
+import propTypes from 'prop-types';
+import { createStructuredSelector } from 'reselect';
 import { connect } from 'react-redux';
-// import { createStructuredSelector } from 'reselect';
-// import { selectRecipes } from '../selectors';
-import { addRecipe } from '../actions';
+import { selectRecipes, selectDetailed } from '../selectors';
+import { showRecipe } from '../actions';
 import RecipeNew from '../RecipeNew/index';
 
 import {
@@ -22,11 +22,12 @@ class Recipe extends Component {
   }
 
   render() {
+    const { recipes, onShowRecipe, selected } = this.props;
     return (
       <div className="row">
         <RecipeItem className="col-sm-offset-2 col-sm-8">
           <RecipeTitle>
-                Also Test
+            {recipes[1].title}
             <i className="fa fa-trash" />
             <i className="fa fa-pencil-square-o" />
           </RecipeTitle>
@@ -58,8 +59,17 @@ class Recipe extends Component {
   }
 }
 
-// function mapStateToProps({ recipes }, ownProps) {
-// return
-// }
+const mapStateToProps = createStructuredSelector({
+  recipes: selectRecipes,
+  selected: selectDetailed,
+});
 
-export default connect(null, { addRecipe })(Recipe);
+const mapDispatchToProps = {
+  onShowRecipe: showRecipe,
+};
+
+Recipe.propTypes = {
+  recipes: propTypes.array,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Recipe);

@@ -29,6 +29,7 @@ const RecipeReducer = (state = initialState, action) => {
         detailedRecipe: action.id,
       };
     default:
+      console.log(state);
       return state;
   }
 };

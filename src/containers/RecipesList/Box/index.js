@@ -3,17 +3,17 @@ import propTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { Title, List } from '../styles';
-import selectRecipes from '../selectors';
+import { selectRecipes, selectDetailed } from '../selectors';
 import { showRecipe } from '../actions';
 
-const Box = ({ recipes }) => (
+const Box = ({ recipes, onShowRecipe }) => (
   <div className="row">
     <Title>
     Recipe Box
     </Title>
     <List className="col-sm-offset-2 col-sm-8">
       {recipes.map(recipe => (
-        <li className="testli">{recipe.name}</li>
+        <button type="button" onClick={onShowRecipe(recipe.id)} className="testli">{recipe.title}</button>
       ))}
     </List>
   </div>
@@ -29,6 +29,7 @@ const mapDispatchToProps = {
 
 Box.propTypes = {
   recipes: propTypes.array,
+  onShowRecipe: propTypes.func,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Box);

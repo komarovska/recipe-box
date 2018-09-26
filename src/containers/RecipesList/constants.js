@@ -1,6 +1,5 @@
 // for actions
 export const ALL = 'ALL';
-export const SHOW_DEFAULT = 'SHOW_DEFAULT';
 export const ADD_RECIPE = 'ADD_RECIPE';
 export const EDIT_RECIPE = 'EDIT_RECIPE';
 export const SHOW_RECIPE = 'SHOW_RECIPE';
@@ -14,7 +13,7 @@ export const lightBeige = 'rgb(255, 253, 234)';
 // default
 export const defaultRecipes = [
   {
-    id: 1,
+    id: 0,
     title: 'Easy Chocolate Pie',
     ingridients: [
       '1 (12 ounce) can evaporated milk',
@@ -31,7 +30,7 @@ export const defaultRecipes = [
     ],
   },
   {
-    id: 2,
+    id: 1,
     title: 'Lime Chicken Tacos',
     ingridients: [
       '1 1/2 pounds skinless, boneless chicken breast meat - cubed',
@@ -46,7 +45,7 @@ export const defaultRecipes = [
     ],
   },
   {
-    id: 3,
+    id: 2,
     title: 'Artichoke Dip',
     ingridients: [
       '1 8oz package soft cream cheese',
