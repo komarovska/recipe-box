@@ -34,19 +34,15 @@ class Recipe extends Component {
           <RecipeBody>
             <RecipeSubtitle>Ingridients</RecipeSubtitle>
             <RecipeIngridients>
-              <li>testing purposes</li>
-              <li>testing purposes</li>
-              <li>testing purposes</li>
-              <li>testing purposes</li>
-              <li>testing purposes</li>
+              {recipes[1].ingridients.map(ingridient => (
+                <li>{ingridient}</li>
+              ))}
             </RecipeIngridients>
             <RecipeSubtitle>Directions</RecipeSubtitle>
             <RecipeIngridients>
-              <li>testing purposes</li>
-              <li>testing purposes</li>
-              <li>testing purposes</li>
-              <li>testing purposes</li>
-              <li>testing purposes</li>
+              {recipes[1].directions.map(direction => (
+                <li>{direction}</li>
+              ))}
             </RecipeIngridients>
           </RecipeBody>
           <RecipeFooter>
