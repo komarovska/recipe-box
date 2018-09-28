@@ -3,7 +3,7 @@ import propTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { Title, List } from '../styles';
-import { selectRecipes, selectDetailed } from '../selectors';
+import { selectRecipes } from '../selectors';
 import { showRecipe } from '../actions';
 
 const Box = ({ recipes, onShowRecipe }) => (
@@ -13,7 +13,14 @@ const Box = ({ recipes, onShowRecipe }) => (
     </Title>
     <List className="col-sm-offset-2 col-sm-8">
       {recipes.map(recipe => (
-        <button type="button" onClick={onShowRecipe(recipe.id)} className="testli">{recipe.title}</button>
+        <button
+          key={recipe.id}
+          type="button"
+          onClick={onShowRecipe(recipe.id)}
+          className="testli"
+        >
+          {recipe.title}
+        </button>
       ))}
     </List>
   </div>

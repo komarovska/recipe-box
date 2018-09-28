@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import propTypes from 'prop-types';
 import { createStructuredSelector } from 'reselect';
 import { connect } from 'react-redux';
-import { selectRecipes, selectDetailed } from '../selectors';
+import { selectRecipes, selectDetailedRecipe } from '../selectors';
 import { showRecipe } from '../actions';
 import RecipeNew from '../RecipeNew/index';
 
@@ -23,11 +23,12 @@ class Recipe extends Component {
 
   render() {
     const { recipes, onShowRecipe, selected } = this.props;
+    const { title, ingredients, directions, id } = selected;
     return (
       <div className="row">
         <RecipeItem className="col-sm-offset-2 col-sm-8">
           <RecipeTitle>
-            {recipes[1].title}
+            {selected.title}
             <i className="fa fa-trash" />
             <i className="fa fa-pencil-square-o" />
           </RecipeTitle>
@@ -35,13 +36,13 @@ class Recipe extends Component {
             <RecipeSubtitle>Ingridients</RecipeSubtitle>
             <RecipeIngridients>
               {recipes[1].ingridients.map(ingridient => (
-                <li>{ingridient}</li>
+                <li key={ingridient}>{ingridient}</li>
               ))}
             </RecipeIngridients>
             <RecipeSubtitle>Directions</RecipeSubtitle>
             <RecipeIngridients>
               {recipes[1].directions.map(direction => (
-                <li>{direction}</li>
+                <li key={direction}>{direction}</li>
               ))}
             </RecipeIngridients>
           </RecipeBody>
@@ -57,7 +58,7 @@ class Recipe extends Component {
 
 const mapStateToProps = createStructuredSelector({
   recipes: selectRecipes,
-  selected: selectDetailed,
+  selected: selectDetailedRecipe,
 });
 
 const mapDispatchToProps = {

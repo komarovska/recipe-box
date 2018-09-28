@@ -24,12 +24,12 @@ const RecipeReducer = (state = initialState, action) => {
         ],
       };
     case SHOW_RECIPE:
+      console.log(action.id);
       return {
         ...state,
         detailedRecipe: action.id,
       };
     default:
-      console.log(state);
       return state;
   }
 };
